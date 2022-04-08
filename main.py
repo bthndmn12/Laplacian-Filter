@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
-im = Image.open("moon.tif")
+im = Image.save("moon.tif")
 # im.show()
 print(im.size)
 # im = im.filter(ImageFilter.DETAIL)
@@ -23,25 +23,25 @@ im2 = np.array(Image.open("kernel_moon.tif").resize(im1.shape[1::-1], Image.BILI
 
 fig = plt.figure()
 a = fig.add_subplot(1, 2, 1)
-imgplot = plt.imshow(im1)
+#imgplot = plt.imshow(im1)
 a.set
 plt.imshow(im1, 'gray')
-plt.show()
+plt.savefig('im0.png')
 plt.hist(im1)
-plt.show()
+plt.savefig('im1Hist.png')
 plt.imshow(im2, 'gray')
-plt.show()
+plt.savefig('im2.png')
 plt.hist(im2)
-plt.show()
+plt.savefig('im2Hist.png')
 
 
 print(im1.dtype)
 
 dst = im1 * 0.5 + im2 * 0.5
 plt.imshow(dst, 'gray')
-plt.show()
+plt.savefig('dst.png')
 plt.hist(dst)
-plt.show()
+plt.savefig('dstHist.png')
 print(dst.dtype)
 # float64
 
