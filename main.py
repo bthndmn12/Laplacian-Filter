@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
-im = Image.show("moon.tif")
+im = Image.open("moon.tif")
 # im.show()
 print(im.size)
 # im = im.filter(ImageFilter.DETAIL)
